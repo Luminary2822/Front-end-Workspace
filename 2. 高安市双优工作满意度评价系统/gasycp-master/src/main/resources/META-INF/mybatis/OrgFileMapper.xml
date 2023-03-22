@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.acreath.gasycp.mapper.OrgFilesMapper">
+<resultMap id="baseMap" type="com.acreath.gasycp.dto.OrgFilesDTO">
+    <result property="id" column="id"/>
+    <result property="orgId" column="org_id"/>
+    <result property="fileUrl" column="file_url"/>
+    <result property="createAt" column="create_at"/>
+    <result property="oneType" column="one_type"/>
+    <result property="twoType" column="two_type"/>
+    <result property="treeType" column="tree_type"/>
+    <result property="fileName" column="file_name"/>
+
+</resultMap>
+
+
+<insert id="createFile" parameterType="com.acreath.gasycp.dto.OrgFilesDTO">
+    insert into orgFiles
+    (org_id,file_url,create_at,two_type,tree_type,file_name,one_type)
+    values
+    (#{orgId},#{fileUrl},#{createAt},#{twoType},#{treeType},#{fileName},#{oneType})
+</insert>
+    <select id="getFileById" resultMap="baseMap">
+        SELECT *
+        FROM
+        orgFiles
+        WHERE
+        id = #{id}
+    </select>
+
+
+<select id="getOrgFilesByOrgId" resultMap="baseMap">
+    SELECT *
+    FROM
+    orgFiles
+    where
+    org_id = #{orgId}
+</select>
+    <select id="contFilesByOrgIdAndType" resultType="java.lang.Integer">
+      SELECT
+      count(0)
+      FROM
+      orgFiles
+      where
+      org_id = #{orgId}
+      and
+      one_type = #{oneType}
+    </select>
+    <select id="contFilesByOrgId" resultType="java.lang.Integer">
+      SELECT
+      count(0)
+      FROM
+      orgFiles
+      where
+      org_id = #{orgId}
+    </select>
+
+
+<delete id="deletedFile">
+    DELETE
+    from
+    orgFiles
+    where
+    id = #{id}
+</delete>
+
+
+
+
+
+
+
+</mapper>

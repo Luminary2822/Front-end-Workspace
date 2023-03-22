@@ -1,0 +1,77 @@
+<!--
+ * @Description: 箭头函数
+ * @Author: Luminary
+ * @Date: 2020-03-04 16:55:22
+ * @LastEditTime: 2022-04-05 16:32:32
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>箭头函数</title>
+  </head>
+  <body>
+    <script>
+      /*
+            function 省略掉，替换为 =>
+            参数只有一个时，可以省略 ()
+            函数体只有一行时，可以省略 {}
+            函数体只有一行，并且有返回值时，如果省略了{}，必须省略 return
+        */
+
+      // 无参数，一行，无返回值的函数
+      // let func1 = function() {
+      //   console.log('hello ITheima')
+      // }
+      // let func1 = () => console.log('hello Luminary')
+      // func1()
+
+      // 1个参数，一行，无返回值的函数
+      // let func2 = function(p1) {
+      //   console.log(p1)
+      // }
+      // let func2 = p1 =>console.log(p1)
+      // func2('这是一个测试')
+
+      // 2个参数，多行，无返回值的函数
+      // let func3 = function(p1, p2) {
+      //   console.log(p1)
+      //   console.log(p2)
+      // }
+      // let func3 = (p1, p2)=>{
+      //   console.log(p1)
+      //   console.log(p2)
+      // }
+      // func3('深圳','黑马程序员')
+
+      // 无参数，一行，有返回值的函数
+      // let func4 = function() {
+      //   return 'ITheima'
+      // }
+      // let func4 = ()=> 'ITheima'
+      // let func4Res = func4()
+      // console.log(func4Res)
+
+      // 1个参数，一行，有返回值的函数
+      // let func5 = function(p1) {
+      //   return p1 + 'ITheima'
+      // }
+      // let func5 = p1=>p1 + 'ITheima'
+      // let res = func5("深圳")
+      // console.log(res)
+
+      // 2个参数，多行，有返回值的函数
+      // let func6 = function(p1, p2) {
+      //   console.log(p1, p2)
+      //   return p1 + p2 + 'ITheima'
+      // }
+      let func6 = (p1, p2)=>{
+        console.log(p1, p2)
+        return p1 + p2 + 'ITheima'
+      }
+      let res = func6('深圳','黑马')
+      console.log(res)
+    </script>
+  </body>
+</html>

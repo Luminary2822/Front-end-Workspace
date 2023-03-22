@@ -1,0 +1,475 @@
+body {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0
+}
+
+.header {
+   background-color: #c50001;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 200px;
+    border-bottom: 7px solid #c50001
+}
+
+.header_name {
+    color: white;
+    font-size: 50px;
+    text-shadow:2px 2px 5px grey;
+    /* letter-spacing: 10px */
+}
+
+.content {
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px
+}
+
+.show_location {
+    background-color: #fff;
+    border-left: 3px solid #c50001;
+    margin-bottom: 10px;
+    border-radius: 0;
+    font-weight: bold
+}
+
+.show_location a {
+    color: #101010
+}
+
+.show_location .active {
+    color: #101010
+}
+
+.unit_infor {
+    background-color: #f2f2f2;
+    margin-bottom: 20px
+}
+
+.unit_font_phone {
+    width: 100%;
+    height: 80px
+}
+
+.unit_font span {
+    font-weight: normal;
+    font-size: 20px
+}
+
+.unit_font_phone span {
+    font-weight: normal;
+    font-size: 20px
+}
+
+.unit_introduction {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 8;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    width: 100%;
+    text-indent: 2em;
+    line-height: 20px;
+    height: 160px
+}
+
+.unit_introduction:after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-left: 10px
+}
+
+.button_c a {
+    color: #fff;
+    text-decoration: none;
+    text-align: center
+}
+
+.show_module {
+    border-left: 3px solid #c50001;
+    margin-bottom: 10px;
+    border-radius: 0;
+    font-weight: bold;
+    background-color: #f2f2f2;
+    width: 100%;
+    display: flex;
+    height: 38px;
+    position: relative
+}
+
+.material_module {
+    width: 880px;
+    margin-top: 20px
+}
+
+.material {
+    margin-bottom: 70px
+}
+
+.module_select {
+    width: auto;
+    padding: 0 3%;
+    margin: 0;
+    height: 22px;
+    line-height: 22px;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    border: 0;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url("../images/sanjiao.png") no-repeat scroll right transparent;
+    background-color: #c50001
+}
+
+.module_select option {
+    text-align: center
+}
+
+.file-list {
+    height: 240px
+}
+
+.show_list {
+    border-radius: 10px;
+    background-color: #c50001;
+    border: 0;
+    color: #fff;
+    width: 80px;
+    height: 22px;
+    font-size: 12px;
+    position: absolute;
+    right: 5px;
+    line-height: 22px;
+    text-align: center
+}
+
+select::-ms-expand {
+    display: none
+}
+
+.module_upload {
+    width: 880px;
+    height: 330px;
+    background-color: #f2f2f2;
+    margin-top: 20px;
+    position: relative;
+    display: flex
+}
+
+.module_upload p {
+    color: #b1b1b1;
+    position: absolute;
+    left: 40%;
+    top: 35%;
+    font-size: 1.6em
+}
+
+.footer {
+    width: 100%;
+    margin-top: 50px;
+    position: relative;
+    bottom: 0;
+    height: 80px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    padding-top: 25px;
+    border-top: 7px solid #c50001
+}
+
+.footer span {
+    font-size: 15px;
+    padding-bottom: 5px
+}
+
+.carousel-control.left {
+    background-image: none;
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1)
+}
+
+.carousel-control.right {
+    left: auto;
+    right: 0;
+    background-image: none;
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1)
+}
+
+.btn_group input {
+    border: 0;
+    outline: 0
+}
+
+.btn_group input:focus {
+    border-style: solid;
+    border-color: #c50001;
+    box-shadow: 0 0 15px #c50001
+}
+
+.button_c {
+    border-radius: 3px;
+    background-color: #c50001;
+    color: #fff;
+    border: 0;
+    float: right;
+    margin-top: 2px
+}
+
+.button_back {
+    margin-top: 10px
+}
+
+.grades {
+    float: right;
+    width: 210px;
+}
+
+.grades p {
+    float: left;
+    line-height: 26px;
+    font-weight: bold
+}
+
+.grades_input {
+    width: 60px;
+    margin-right: 5px
+}
+
+.get_score_select {
+    line-height: 25px;
+    width: auto;
+    height: 25px;
+    text-align: center;
+    font-size: 12px;
+    color: #000;
+    outline: 0;
+    padding: 0 3px
+}
+
+.grades_show {
+    height: 50px;
+    background-color: #f2f2f2;
+    color: #101010;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px
+}
+
+.grades_show p {
+    float: left;
+    width: 25%;
+    height: auto;
+    line-height: 50px
+}
+
+.btn_le_phone {
+    font-size: 18px;
+    float: left;
+    background-color: #b1b1b1;
+    color: #3c3c3c;
+    margin-top: 10px;
+    margin-bottom: 30px
+}
+
+.btn_current {
+    background-color: #c50001;
+    color: #fff
+}
+
+.button_c_phone {
+    border-radius: 3px;
+    background-color: #c50001;
+    color: #fff;
+    border: 0;
+    position: absolute;
+    right: 1px;
+    margin-top: 2px
+}
+
+.button_c_phone a {
+    color: #fff;
+    text-decoration: none;
+    text-align: center
+}
+
+.unit_name_phone {
+    font-size: 18px;
+    width: 300px
+}
+
+.btn_le {
+    font-size: 18px;
+    margin-right: 15px;
+    margin-top: 10px
+}
+
+@media screen and (max-width:767px) {
+    .body {
+        width: auto
+    }
+
+    .header {
+        width: auto;
+        height: 10rem
+    }
+
+    .header_name {
+        overflow: auto;
+        font-size: 17px;
+        margin: 30px 20px;
+        letter-spacing: 5px;
+    }
+
+    .menu {
+        width: auto
+    }
+
+    .content {
+        margin-top: 50px
+    }
+
+    .btn_le_phone {
+        margin-right: 15px
+    }
+
+    .get_score_lead {
+        margin-left: 20px
+    }
+
+    .current {
+        background-color: #c50001;
+        color: #fff
+    }
+
+    .input1 {
+        margin-left: 200px
+    }
+
+    .unit_infor {
+        width: auto;
+        height: 10rem
+    }
+
+    .grades_show {
+        width: auto
+    }
+
+    .btn_group {
+        width: auto;
+        height: 80px
+    }
+
+    .btn_group_le {
+        float: left;
+        margin-left: 2rem
+    }
+
+    .btn_le {
+        font-size: 18px;
+        margin-right: 15px;
+        margin-top: 10px
+    }
+
+    .unit_font {
+        width: 50%;
+        height: 210px;
+        padding-top: 35px;
+        font-weight: bold;
+        float: left;
+        margin-left: 8%;
+    }
+
+    .unit_name_phone{
+        /* margin: center center; */
+        /* margin 40% 0px; */
+        margin-left: 12%;
+    }
+}
+
+@media screen and (min-width:767px) {
+    body {
+        min-width: 1500px
+    }
+
+    .header {
+        height: 200px
+    }
+
+    .header_name {
+        font-size: 50px;
+        margin: 60px 100px;
+        letter-spacing: 10px
+    }
+
+    .content {
+        width: 880px;
+        height: auto;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 50px
+    }
+
+    .unit_infor {
+        width: 880px;
+        height: 240px
+    }
+
+    .grades_show {
+        width: 880px
+    }
+
+    .handout_1 {
+        width: 880px;
+        height: 550px;
+        border: 0
+    }
+
+    .btn_group {
+        width: 880px;
+        height: 80px
+    }
+
+    .btn_group_le {
+        float: left;
+        margin-left: 160px;
+        margin-top: 10px
+    }
+
+    .btn_le {
+        margin-right: 150px;
+        margin-bottom: 10px
+    }
+
+    .unit_pic {
+        width: 36%;
+        height: 200px;
+        margin-left: 4.6%;
+        margin-right: 2%;
+        margin-top: 20px;
+        border: 4px solid #3d424d
+    }
+
+    .unit_pic img {
+        width: 100%;
+        height: 192px
+    }
+
+    .unit_font {
+        width: 50%;
+        height: 210px;
+        padding-top: 35px;
+        font-weight: bold;
+        float: left;
+        margin-right: 35%;
+        margin-left: 40%;
+        margin-top:80px;
+    }
+}

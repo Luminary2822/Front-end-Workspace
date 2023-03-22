@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.acreath.gasycp.mapper.OrgMapper">
+
+    <resultMap id="baseMap" type="com.acreath.gasycp.dto.OrgInfoDTO">
+        <result column="org_id" property="orgId"/>
+        <result column="org_name" property="orgName"/>
+        <result column="org_person" property="orgPerson"/>
+        <result column="org_create_at" property="orgCreateAt"/>
+        <result column="org_info" property="orgInfo"/>
+        <result column="org_score" property="orgScore"/>
+        <result column="org_type" property="orgType"/>
+        <result column="file_status" property="fileStatus"/>
+        <result column="leader_status" property="leaderStatus"/>
+        <result column="expert_status" property="expertStatus"/>
+        <result column="adm_status" property="admStatus"/>
+        <result column="module1_status" property="module1Status"/>
+        <result column="module2_status" property="module2Status"/>
+        <result column="module3_status" property="module3Status"/>
+        <result column="module4_status" property="module4Status"/>
+        <result column="module5_status" property="module5Status"/>
+        <result column="module6_status" property="module6Status"/>
+    </resultMap>
+
+
+    <select id="findOrgByOrgId" resultMap="baseMap">
+        SELECT *
+        FROM org
+        where org_id = #{orgId}
+    </select>
+
+    <select id="getOrgByType" resultMap="baseMap">
+        SELECT *
+        FROM  org
+        WHERE org_type=#{orgType}
+    </select>
+    <update id="upDataLeaderStatus">
+      UPDATE
+      org
+
+      SET
+      leader_status = #{leaderStatus}
+      WHERE
+        org_id = #{id}
+    </update>
+
+    <update id="upDataExpertStatus">
+      UPDATE
+      org
+
+      SET
+      expert_status = #{expertStatus}
+      WHERE
+        org_id = #{id}
+    </update>
+
+
+    <update id="upDataFileStatus">
+      UPDATE
+      org
+      SET
+      file_status = #{fileStatus}
+      WHERE
+        org_id = #{id}
+    </update>
+
+
+    <update id="upDataAdmStatus">
+      UPDATE
+      org
+
+      SET
+      adm_status = #{admStatus}
+      WHERE
+        org_id = #{id}
+    </update>
+    <update id="upDataModule1FileStatus">
+        UPDATE
+        org
+
+        SET
+        module1_status = #{status}
+        WHERE
+        org_id = #{id}
+    </update>
+    <update id="upDataModule2FileStatus">
+        UPDATE
+        org
+        SET
+
+        module2_status = #{status}
+        WHERE
+        org_id = #{id}
+    </update>
+    <update id="upDataModule3FileStatus">
+        UPDATE
+        org
+
+        SET
+        module3_status = #{status}
+         WHERE
+        org_id = #{id}
+    </update>
+    <update id="upDataModule4FileStatus">
+        UPDATE
+        org
+
+        SET
+        module4_status = #{status}
+              WHERE
+        org_id = #{id}
+    </update>
+    <update id="upDataModule5FileStatus">
+        UPDATE
+        org
+
+        SET
+        module5_status = #{status}
+          WHERE
+        org_id = #{id}
+    </update>
+    <update id="upDataModule6FileStatus">
+        UPDATE
+        org
+        SET
+        module6_status = #{status}
+
+                WHERE
+        org_id = #{id}
+    </update>
+
+
+
+
+</mapper>

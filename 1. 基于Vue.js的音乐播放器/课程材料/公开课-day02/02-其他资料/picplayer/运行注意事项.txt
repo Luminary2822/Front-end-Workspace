@@ -1,0 +1,5 @@
+在项目中运行的时候出现报错，错误为Module build failed (from ./node_modules/babel-loader/lib/index.js)
+解决方案：
+控制台输入  npm install @babel/core @babel/preset-env 命令
+再运行
+OK

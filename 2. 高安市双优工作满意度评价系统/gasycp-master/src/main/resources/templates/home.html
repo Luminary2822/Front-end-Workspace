@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<title>首页</title>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<!-- 上传后使用 -->
+	<script type="text/javascript" src="../scripts/bootstrap.min.js"></script>
+	<link href="../style/bootstrap.min.css" rel="stylesheet">
+	<link href="../style/home.min.css" rel="stylesheet">
+	<!-- 上传前 -->
+	<!--<script type="text/javascript" src="../static/scripts/bootstrap.min.js"></script>
+	<link href="../static/style/bootstrap.min.css" rel="stylesheet">
+	<link href="../static/style/home.min.css" rel="stylesheet">-->
+	<script>
+        var userAgent = navigator.userAgent.toLowerCase();
+        var platform;
+        if(userAgent == null || userAgent == ''){
+            platform = 'WEB' ;
+        }else{
+            if(userAgent.indexOf("android") != -1 ){
+                platform = 'ANDROID';
+                location.href = "/user/homePhone";
+            }else if(userAgent.indexOf("ios") != -1 || userAgent.indexOf("iphone") != -1 || userAgent.indexOf("ipad") != -1){
+                platform = 'IOS';
+                location.href = "/user/homePhone";
+            }else if(userAgent.indexOf("windows phone") != -1 ){
+                platform = 'WP';
+                location.href = "/user/homePhone";
+            }
+        }
+	</script>
+</head>
+
+<body>
+	<div class="container-fluid">
+		<!-- 头部 -->
+		<div class="header">
+			<label class="header_name">高安市2018年下半年“双优”工作满意度评价</label>
+			<div class="login_a">
+				<a href="/user/login" class="login" id="login">登录</a>
+			</div>
+		</div>
+
+		<!-- 主要显示部分 -->
+		<div class="main">
+			<div class="img_name">
+				<label style="font-size: 20px;">-高安市民中心-</label>
+			</div>
+			<div class="main_right">
+				<div class="details">
+					 各位领导、各位企业老总、市民朋友：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;欢迎您来到高安市“双优”（优化环境优质服务）评价系统,非常诚挚的邀请您对全市:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1、23个乡镇（街道）；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2、38个行政服务（窗口）类单位；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3、38个服务社会类单位；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4、37个条管单位；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5、3&nbsp;&nbsp;个园区；<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2018年下半年“双优”工作进行评价，并提出宝贵意见和建议。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;您的评价将是对各乡镇（街道）各部门各单位为企为民服务成果的最有效检验，也是打造品牌高安的有效举措之一。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请您在百忙之中登录评价，谢谢！
+				</div>
+			</div>
+		</div>
+		<!-- 底部 -->
+		<div class="footer">
+			<span>
+				高安市2018年度下半年“双优”工作满意度评价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				地址：江西省高安市锦惠中路376号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				邮政编码：330800&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				联系电话：0795-5288156
+			</span>
+		</div>
+	</div>
+
+</body>
+<script type="text/javascript">
+	var login = document.getElementById('login');
+	login.onclick = function () {
+		if (login.getAttribute("org_id") == null) {
+			login.href = "/user/login";
+		} else {
+			login.href = "/org/index";
+		}
+	}
+</script>
+
+</html>

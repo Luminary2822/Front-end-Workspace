@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <!-- 解决部分兼容性问题，如果安装了GCF，则使用GCF来渲染页面，如果未安装GCF，则使用最高版本的IE内核进行渲染。 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>行政中心评价窗口</title>
+    <link href="../style/bootstrap.min.css" rel="stylesheet">
+    <link href="../style/score_list.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="../scripts/bootstrap.min.js"></script>
+
+    <!--<link href="../static/style/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/style/score_list.min.css" rel="stylesheet">-->
+    <script>
+        $(function(){
+            if(!!window.ActiveXObject||"ActiveXObject" in window){
+                alert("提示: 您在使用的浏览器内核版本可能导致浏览异常。\n" +
+                    "\n" +
+                    "解决方法（任选其一）：\n" +
+                    "请切换到当前浏览器的极速模式\n" +
+                    "请安装Chrome(谷歌浏览器）、Firefox（火狐）浏览器、QQ浏览器、搜狐浏览器、360浏览器来使用本系统\n")
+            }
+            // var img_down = $(".img_down").indexOf(".img_down");
+            $(".img_down").click(
+                function(){
+                    if($(".list_box").eq($(".img_down").index($(this)[0])).css("display")=='none'){
+                        $(".list_box").eq($(".img_down").index($(this)[0])).slideDown(500);
+                    }else{
+                        $(".list_box").eq($(".img_down").index($(this)[0])).slideUp(500);
+                    }
+                });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="header">
+            <label class="header_name">高安市2018年下半年“双优”工作满意度评价</label>
+        </div>
+        <div class="content" th:id="${identitys}" style="position: relative;margin-bottom: 50px;">
+              <button id="save" type="button" class="confirm confirm2" onclick="save();">保存</button>
+            <!--<div class="content" id="9" style="position: relative;margin-bottom: 50px;">-->
+
+            <ol class="breadcrumb show_location">
+                <li><a href="/">首页</a></li>
+                <li class="active" id="department">行政中心评价窗口</li>
+            </ol>
+            <!--乡镇（街道)-->
+            <div class="menu">
+                <div class="row box_border">
+                    <div class="split to_left">
+                        <hr class="line to_right" />
+                    </div>
+                    <div class="mid_box">
+                        <div>
+                            <strong class="unit">乡镇（街道）</strong>
+                            <img src="../images/down.png" alt="" class="img_down">
+                        </div>
+                    </div>
+                    <div class="split to_left">
+                        <hr class="line to_left" />
+                    </div>
+                </div>
+                <div class="list_box">
+                    <ul class="list-group">
+                        <li href="#" class="list-group-item" th:each="unit:${orgType1}">
+                            <span class="red_point to_left" style="float: left;"> </span>
+                            <span class="list_span" th:text="${unit.org_name}">XXXXXXXX单位</span>
+                            <!--<div style="float: right;">-->
+                            <!--<span class="state adminstrative_state" >-->
+                            <!--<i th:if="${adminstrative.status}==0" class="fa fa-check-circle-o"></i>-->
+                            <!--<i th:if="${adminstrative.status}==1"  class="fa fa-check-circle"  style="color: green"></i>-->
+                            <!--<span class="state_text">评选状态</span>-->
+                            <!--</span>-->
+                            <!--<span class="get_score">请输入分值 :<input class="scores" placeholder="最多扣除3分" th:id="${unit.org_id}" ></span>-->
+                            <!--</div>-->
+                            <span class="get_score">请输入扣分值 :<input class="scores" th:id="${unit.org_id}"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--行政服务（窗口）类单位-->
+            <div class="menu">
+                <div class="row box_border">
+                    <div class="split right_line to_left">
+                        <hr class="line to_right" />
+                    </div>
+                    <div class="mid_box">
+                        <div style="">
+                            <strong class="unit">行政服务（窗口）类单位</strong>
+                            <img src="../images/down.png" alt="" class="img_down">
+                        </div>
+                    </div>
+                    <div class="split left_line to_left">
+                        <hr class="line to_left" />
+                    </div>
+                </div>
+                <div class="list_box">
+                    <ul class="list-group">
+                        <li href="#" class="list-group-item" th:each="unit:${orgType2}">
+                            <span class="red_point to_left" style="float: left;"> </span>
+                            <span class="list_span" th:text="${unit.org_name}">XXXXXXXX单位</span>
+                            <span class="get_score">请输入扣分值 :<input class="scores" th:id="${unit.org_id}"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--服务社会类单位-->
+            <div class="menu">
+                <div class="row box_border">
+                    <div class="split right_line to_left">
+                        <hr class="line to_right" />
+                    </div>
+                    <div class="mid_box">
+                        <div style="">
+                            <strong class="unit">服务社会类单位</strong>
+                            <img src="../images/down.png" alt="" class="img_down">
+                        </div>
+                    </div>
+                    <div class="split left_line to_left">
+                        <hr class="line to_left" />
+                    </div>
+                </div>
+                <div class="list_box">
+                    <ul class="list-group">
+                        <li href="#" class="list-group-item" th:each="unit:${orgType3}">
+                            <span class="red_point to_left" style="float: left;"> </span>
+                            <span class="list_span" th:text="${unit.org_name}">XXXXXXXX单位</span>
+                            <span class="get_score">请输入扣分值 :<input class="scores" th:id="${unit.org_id}"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--园区-->
+            <div class="menu">
+                <div class="row box_border">
+                    <div class="split right_line to_left">
+                        <hr class="line to_right" />
+                    </div>
+                    <div class="mid_box">
+                        <div style="">
+                            <strong class="unit">园区</strong>
+                            <img src="../images/down.png" alt="" class="img_down">
+                        </div>
+                    </div>
+                    <div class="split left_line to_left">
+                        <hr class="line to_left" />
+                    </div>
+                </div>
+                <div class="list_box">
+                    <ul class="list-group">
+                        <li href="#" class="list-group-item" th:each="unit:${orgType5}">
+                            <span class="red_point to_left" style="float: left;"> </span>
+                            <span class="list_span" th:text="${unit.org_name}">XXXXXXXX单位</span>
+                            <span class="get_score">请输入扣分值 :<input class="scores" th:id="${unit.org_id}"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--条管单位-->
+            <div class="menu">
+                <div class="row box_border">
+                    <div class="split right_line to_left">
+                        <hr class="line to_right" />
+                    </div>
+                    <div class="mid_box">
+                        <div style="">
+                            <strong class="unit">条管单位</strong>
+                            <img src="../images/down.png" alt="" class="img_down">
+                        </div>
+                    </div>
+                    <div class="split left_line to_left">
+                        <hr class="line to_left" />
+                    </div>
+                </div>
+                <div class="list_box">
+                    <ul class="list-group">
+                        <li href="#" class="list-group-item" th:each="unit:${orgType4}">
+                            <span class="red_point to_left" style="float: left;"> </span>
+                            <span class="list_span" th:text="${unit.org_name}">XXXXXXXX单位</span>
+                            <span class="get_score">请输入扣分值 :<input class="scores" th:id="${unit.org_id}"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--<span class="div_confirm">-->
+            <div class="input1">
+                <span>
+                    <button id="grades_submit" type="button" class="confirm">提交</button>
+                </span>
+            </div>
+
+        </div>
+        <div class="footer">
+            <span>
+                高安市2018年度下半年“双优”工作满意度评价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                地址：江西省高安市锦惠中路376号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                邮政编码：330800&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                联系电话：0795-5288156
+            </span>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript" th:inline="javascript">
+    var identitys = [[${identitys}]];
+    $(function () {
+        if (identitys===4){document.getElementById("department").innerText="热线办日常考核窗口";}
+        if (identitys===8){document.getElementById("department").innerText="双优办日常考核窗口";}
+        if (identitys===9){document.getElementById("department").innerText="行政审批股日常考核窗口";}
+        if (identitys===10){document.getElementById("department").innerText="公共资源交易股日常考核窗口";}
+        if (identitys===11){document.getElementById("department").innerText="涉审中介股日常考核窗口";}
+        if (identitys===12){document.getElementById("department").innerText="采购中心日常考核窗口";}
+        $(".scores").bind("input propertychang", function (event) {
+            var viewName = this.value;
+            viewName = $.trim(viewName);
+            this.value = viewName;
+            // alert(this.value);
+            if (this.value < 0) {
+                alert("扣分值请输入正数！");
+                this.value = "";
+                this.focus();
+                return false;
+            }else if (isNaN(this.value)) {
+                alert("扣分值请输入数字！");
+                this.value = "";
+                this.focus();
+                return false;
+            } else if (identitys > 9) {
+                if (this.value > 1) {
+                    alert("扣分值不能超过1分！");
+                    this.value = "";
+                    this.focus();
+                    return false;
+                }
+            } else if (identitys < 9) {
+                if (this.value > 2) {
+                    alert("扣分值不能超过2分！");
+                    this.value = "";
+                    this.focus();
+                    return false;
+                }
+            } else {
+                if (this.value > 3) {
+                    alert("扣分值不能超过3分！");
+                    this.value = "";
+                    this.focus();
+                    return false;
+                }
+            }
+        });
+
+    });
+
+    function save() {
+        var history = [];
+        window.localStorage.formHistory = '';
+        $('input').each(function () {
+            history.push({
+                "text": $(this).val()
+            })
+        });
+        window.localStorage.formHistory = JSON.stringify(history);
+        alert("保存成功！");
+    }
+    $(document).ready(function () {
+        var localMsg;
+        if (window.localStorage.formHistory) {
+            localMsg = JSON.parse(window.localStorage.formHistory);
+        }
+        if (localMsg && localMsg.length >= 1) {
+            var realIndex = 0;
+            for (var i = 0; i < $('input').length; i++) {
+                if ($($('input')[i])[0].type === 'text') {
+                    $($('input')[i]).val(localMsg[realIndex].text);
+                    realIndex++;
+                }
+            }
+        }
+    });
+    var orgType1 = [[${orgType1}]];
+    var orgType2 = [[${orgType2}]];
+    var orgType3 = [[${orgType3}]];
+    var orgType4 = [[${orgType4}]];
+    var orgType5 = [[${orgType5}]];
+    var account_id = [[${account_id}]];
+    console.log(orgType1);
+    console.log(orgType2);
+    console.log(orgType3);
+    console.log(orgType4);
+    console.log(orgType5);
+
+    $("#grades_submit").click(function () {
+        var lead_score = [];
+        var org_id = [];
+        var lead_check = [];
+        $('input').each(function () {
+            lead_check.push($(this).val());
+        });
+        if (lead_check.indexOf("") > -1) {
+            alert("你好，你未对所有部门进行评分，请你对他们评分后再提交，谢谢！")
+        } else {
+            $('input').each(function () {
+                lead_score.push($(this).val());
+                org_id.push($(this).attr("id"));
+            });
+             alert("打分成功");
+            $.ajax({
+                url: "/makeScore/addScore",
+                type: "post",
+                data: {
+                    "lead_score": lead_score,
+                    "org_id": org_id,
+                    "score_type": 4,
+                    "account_id": account_id
+                },
+
+                success: function (res) {
+                    if (res.code !== 200) {
+                        return false;
+                    } else {
+                        alert("打分成功")
+                    }
+                },
+                error: function () {
+                    alert("打分失败");
+                    return false;
+                }
+            });
+        }
+    })
+</script>
+
+</html>

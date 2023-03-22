@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.acreath.gasycp.mapper.MakeScoreMapper">
+
+    <insert id="addScore">
+        insert  into makeScore
+        (score, org_id,account_id,score_type)
+        VALUES 
+        <foreach collection="makeScoreDTOS" item="makeScoreDTO" separator=",">
+            (#{makeScoreDTO.score},#{makeScoreDTO.orgId},#{makeScoreDTO.accountId},#{makeScoreDTO.scoreType})
+        </foreach>
+    </insert>
+
+    <delete id="deleteAll">
+        delete
+        from makeScore
+        where
+        account_id = #{accountId}
+    </delete>
+    <delete id="deleteOne">
+        delete
+        from makeScore
+        WHERE
+        account_id =#{accountId}
+        AND
+        org_id = #{orgId}
+    </delete>
+    <select id="contScore" resultType="java.lang.Integer">
+    SELECT
+    count(0)
+    FROM
+    makeScore
+    where
+    score_type=#{scoreType}
+    and
+    org_id=#{orgId}
+    </select>
+
+    <select id="contScoreByAccount" resultType="java.lang.Integer">
+    SELECT
+    count(0)
+    FROM
+    makeScore
+    where
+    account_id=#{accountId}
+    </select>
+
+
+    <insert id="expertAddScore">
+        insert  into expertMakeScore
+        (score, org_id,account_id,score_type)
+        VALUES
+        <foreach collection="makeScoreDTOS" item="makeScoreDTO" separator=",">
+            (#{makeScoreDTO.score},#{makeScoreDTO.orgId},#{makeScoreDTO.accountId},#{makeScoreDTO.scoreType})
+        </foreach>
+    </insert>
+
+    <delete id="expertDeleteAll">
+        delete
+        from expertMakeScore
+        where
+        account_id = #{accountId}
+    </delete>
+    <delete id="expertDeleteOne">
+        delete
+        from expertMakeScore
+        WHERE
+        account_id =#{accountId}
+        AND
+        org_id = #{orgId}
+    </delete>
+    <select id="expertContScore" resultType="java.lang.Integer">
+    SELECT
+    count(0)
+    FROM
+    expertMakeScore
+    where
+    score_type=#{scoreType}
+    and
+    org_id=#{orgId}
+    </select>
+
+    <select id="expertContScoreByAccount" resultType="java.lang.Integer">
+    SELECT
+    count(0)
+    FROM
+    expertMakeScore
+    where
+    account_id=#{accountId}
+    </select>
+    <select id="expertContScoreByAccountAndOrgId" resultType="java.lang.Integer">
+    SELECT
+    count(0)
+    FROM
+    expertMakeScore
+    where
+    account_id=#{accountId}
+    and
+    org_id =#{orgId}
+    </select>
+
+
+
+
+
+
+
+</mapper>

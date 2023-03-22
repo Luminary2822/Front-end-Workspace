@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <!--强制使用Webkit内核-->
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <script src="../scripts/jquery.min.js"></script>
+    <link rel="stylesheet" href="../style/bootstrap.min.css">
+    <script src="../scripts/bootstrap.min.js"></script>
+    <!--<script src="../scripts/login.min.js"></script>-->
+    <!--<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../style/login_style.min.css">
+    <!-- 上传前 -->
+    <!--<link rel="stylesheet" href="../static/style/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/style/login_style.min.css">-->
+
+    <title>登录</title>
+    <!--弹出提示框-->
+    <script>
+        $(function(){
+            if(!!window.ActiveXObject||"ActiveXObject" in window){
+                alert("提示: 您在使用的浏览器内核版本可能导致浏览异常。\n" +
+                    "\n" +
+                    "解决方法（任选其一）：\n" +
+                    "请切换到当前浏览器的极速模式\n" +
+                    "请安装Chrome(谷歌浏览器）、Firefox（火狐）浏览器、QQ浏览器、搜狐浏览器、360浏览器来使用本系统\n")
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="main">
+            <div class="header">
+                <label class="header_name">高安市2018年下半年“双优”工作满意度评价</label>
+            </div>
+            <div class="content">
+                    <div class="main-blur"></div>
+                <div class="img_name">
+                    <label style="font-size: 20px;">-高安市民中心-</label>
+                </div>
+                <div class="rowall">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-6 line">
+                            <!--<img class="img-responsive" src="../images/content.png">-->
+                        </div>
+
+                        <fieldset class="col-md-6 col-sm-6 col-xs-6">
+                            <!--<fieldset class="col-md-6 col-sm-6 col-xs-6">-->
+                            <ul class="tab col-md-8 col-md-offset-3 col-sm-offset-1  col-sm-10 col-xs-12">
+                                <li id="tab1"><button class="two_tab">登&nbsp;录</button></li>
+                                <!--<li id="tab2"><button class="two_tab" onclick="onclick2();">高安政务</button></li>-->
+                            </ul>
+                            <div id="form_content">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-8 col-md-offset-3 col-sm-offset-1  col-sm-10 col-xs-12">
+                                            <input id="username" type="text" name="" size="35" placeholder="用户名">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-8 col-md-offset-3 col-sm-offset-1  col-sm-10 col-xs-12">
+                                            <input id="password" type="password" name="" size="35" placeholder="密码">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="col-md-8 col-md-offset-3 col-sm-offset-1  col-sm-10 col-xs-12">
+                                            <div class="row btn-row">
+                                                <div class="col-md-5 col-sm-5 col-xs-6">
+                                                    <a href="/user/fixPassword" style="text-decoration: none">
+                                                        <button class="btn btn-default change_btn" type="button"
+                                                            onmouseover="this.style.backgroundColor='#c73e3e';this.style.color = 'white';"
+                                                            onmouseout="this.style.backgroundColor='#C50001';">修改密码</button>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-5 col-sm-5 col-xs-6">
+                                                    <button class="btn btn-default login_btn" type="button" id="btn_login"
+                                                        onmouseover="this.style.backgroundColor='#c73e3e';this.style.color = 'white';"
+                                                        onmouseout="this.style.backgroundColor='#C50001';">登录</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <!--<div id="QR_code"><img src="../images/二维码.jpg" class="code_img" width="200px"></div>-->
+                        </fieldset>
+
+                    </div>
+                </div>
+            </div>
+            <!--<span id="QR_code_firm"><img src="../images/QR_Code.png" class="code_img"></span>-->
+            </fieldset>
+        </div>
+        <div class="footer">
+            <span>
+                高安市2018年度下半年“双优”工作满意度评价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                地址：江西省高安市锦惠中路376号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                邮政编码：330800&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                联系电话：0795-5288156
+            </span>
+        </div>
+    </div>
+
+    </div>
+    </div>
+
+</body>
+<script type="text/javascript" th:inline="javascript">
+    var identitys = [[${identitys}]];
+    $("#btn_login").click(function () {
+        var reg = /^[a-zA-Z0-9]{3,18}$/; //6-18位字母和数字的混合组成的正则表达式的js代码
+        var username = document.getElementById("username");
+        var password = document.getElementById("password");
+        if (username.value === "") {
+            alert("用户名不能为空，请重新填写！");
+        } else if (password.value === "") {
+            alert("密码不能为空，请重新输入！");
+        } else if (!reg.test(username.value)) {
+            alert("请正确输入用户名！");
+            username.value = "";
+            username.focus();
+        } else if (!reg.test(password.value)) {
+            alert("请正确输入密码！");
+            password.value = "";
+            password.focus();
+        }
+
+
+        var username1 = $("#username").val();
+        var password1 = $("#password").val();
+        $.ajax({
+            url: "/user/login/authenticate", //登录接口
+            type: "post",
+            data: {
+                "username": username1,
+                "password": password1
+            },
+            dataType: "json",
+            success: function (res) {
+                if (res.code !== 200) {
+
+                    return false;
+                }
+                if (res.data === 1) {
+                    window.location.href = "/org/index";
+                }
+                if (res.data === 2) {
+                    window.location.href = "/org/leaderList"
+                }
+                if (res.data === 3) {
+                    window.location.href = "/org/expertList"
+                }
+                if (res.data === 4) {
+                    window.location.href = "/org/adminList"
+                }
+                if (res.data === 5) {
+                    $('<div>').appendTo('body').addClass('alert alert-success').html('数据加载中，请稍后').show()
+                        .delay(40000).fadeOut();
+                    window.location.href = "/admin/adminList"
+                }
+                if (res.data === 6) {
+                    window.location.href = "/org/areaList"
+                }
+                if (res.data === 7) {
+                    window.location.href = "/org/townList"
+                }
+                if (res.data === 4) {
+                    window.location.href = "/org/adminList"
+                }
+                if (res.data === 8) {
+                    window.location.href = "/org/adminList"
+                }
+                if (res.data === 9) {
+                    window.location.href = "/org/adminList"
+                }
+                if (res.data === 10) {
+                    window.location.href = "/org/adminList"
+                }
+                if (res.data === 11) {
+                    window.location.href = "/org/adminList"
+                }
+                if (res.data === 12) {
+                    window.location.href = "/org/adminList"
+                }
+            },
+            error: function () {
+                alert("账号密码错误");
+                return false;
+            }
+        });
+    })
+</script>
+
+</html>

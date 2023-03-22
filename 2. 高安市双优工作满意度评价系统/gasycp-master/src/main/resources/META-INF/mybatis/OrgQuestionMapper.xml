@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.acreath.gasycp.mapper.OrgQuestionMapper">
+<resultMap id="baseMap" type="com.acreath.gasycp.dto.OrgQuestionDTO">
+    <result property="accountId" column="account_id"/>
+    <result property="optionId" column="option_id"/>
+</resultMap>
+    <insert id="insertOrgQuestions" >
+        insert  into
+        orgQuestion
+        (account_id,option_id,option_number)
+        VALUES
+        (#{accountId},#{optionId},#{optionNumber})
+    </insert>
+
+
+    <delete id="deletedAll">
+        delete
+        from orgQuestion
+        where
+        account_id = #{accountId}
+    </delete>
+
+
+
+</mapper>

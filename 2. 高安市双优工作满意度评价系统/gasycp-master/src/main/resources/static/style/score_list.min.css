@@ -1,0 +1,425 @@
+* {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0
+}
+
+.header {
+    background-color: #c50001;
+    background-size: 100% 100%;
+    border-bottom: 7px solid #c50001
+}
+
+.header_name {
+    color: white;
+    font-size: 50px;
+    text-shadow:2px 2px 5px grey;
+
+    /* letter-spacing: 10px */
+}
+
+.content {
+    width: auto;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px
+}
+
+.show_location {
+    background-color: #fff;
+    border-left: 3px solid #c50001;
+    margin-bottom: 10px;
+    border-radius: 0;
+    font-weight: bold
+}
+
+.show_location a {
+    color: #101010
+}
+
+.show_location .active {
+    color: #101010
+}
+
+.footer {
+    width: 100%;
+    margin-top: 70px;
+    position: relative;
+    bottom: 0;
+    height: 80px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    padding-top: 25px;
+    border-top: 7px solid #c50001
+}
+
+.footer span {
+    font-size: 15px;
+    padding-bottom: 5px
+}
+
+a:hover,
+a:link,
+a:visited {
+    text-decoration: none
+}
+
+.main_box {
+    min-width: 855px;
+    width: 90%;
+    margin-left: 5%;
+    background: #f2f2f2;
+    margin-top: 10px
+}
+
+.menu {
+    padding-top: 10px;
+    height: auto;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.split {
+    height: 100%;
+    width: 19%
+}
+
+.to_left {
+    float: left
+}
+
+.to_right {
+    float: right
+}
+
+.line {
+    height: 2px;
+    border: 0;
+    border-top: 2px solid #e7e7e7;
+    width: 50%;
+}
+
+.mid_box {
+    text-align: center;
+    height: 100%;
+    width: 60%;
+    float: left;
+    margin-top: 5px
+}
+
+.img_down {
+    cursor: pointer;
+    width: 50px;
+    height: 45px;
+    margin-top: -5px
+}
+
+.unit {
+    color: #000;
+    font-size: 18px;
+    font-weight: bold
+}
+
+.list_box {
+    width: 100%
+}
+
+.le_list_height {
+    height: 120px
+}
+
+.red_point {
+    background: #c50001;
+    width: 12px;
+    height: 12px;
+    border-radius: 8px;
+    margin-top: 3px;
+    margin-bottom: auto
+}
+
+.input1 {
+    margin-left: 770px
+}
+
+.list_span {
+    font-size: 22px;
+    color: #000;
+    margin-left: 10px
+}
+
+.get_score {
+    font-size: 15px;
+    color: #000;
+    float: right;
+    right: 120px;
+    position: absolute
+}
+
+.scores {
+    font-size: 15px;
+    color: #000;
+    float: right;
+    position: absolute;
+    width: 80px;
+    height: auto;
+    margin-left: 10px;
+    line-height: 15px
+}
+
+.list_text {
+    line-height: 2em;
+    text-indent: 2em;
+    font-size: 16px
+}
+.list_text2 {
+    line-height: 2em;
+    text-indent: 2em;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+
+.box_border {
+    background: white;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #ddd
+}
+
+.btn_shadow {
+    -webkit-box-shadow: 3px 3px 3px;
+    -moz-box-shadow: 3px 3px 3px;
+    box-shadow: 3px 3px 3px;
+    background: #c50001;
+    width: 100px;
+    height: auto;
+    right: 5px;
+    position: absolute;
+    margin-top: 10px;
+    font-size: 17px;
+    line-height: 18px;
+    outline: 0;
+    border: 0
+}
+
+input::-webkit-input-placeholder {
+    font-family: "Microsoft YaHei", serif;
+    font-size: 13px
+}
+
+input::-moz-placeholder {
+    font-family: "Microsoft YaHei", serif;
+    font-size: 13px
+}
+
+.get_score_lead {
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    float: right;
+    margin-top: -5px
+}
+
+.red_pointad {
+    background: #c50001;
+    width: 12px;
+    height: 12px;
+    border-radius: 8px;
+    margin-top: 6px;
+    margin-bottom: auto
+}
+
+.state {
+    margin-left: 10px;
+    font-size: 18px
+}
+
+.ex_state {
+    margin-right: 20px
+}
+
+.adminstrative_state {
+    font-size: 15px;
+    right: 230px;
+    position: absolute
+}
+
+.state_text {
+    font-size: 15px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.confirm {
+    width: 105px;
+    height: 30px;
+    color: white;
+    background-color: #c50001;
+    font-weight: bold;
+    border: 0;
+    border-radius: 5px;
+    display: inline;
+    float: left;
+}
+.confirm2
+{
+    left: 72%;
+    position: fixed;
+    margin-top: -35px;
+    z-index: 999;
+}
+
+.dropdown a {
+    color: black
+}
+
+.list_view {
+    height: 190px;
+    overflow: hidden;
+    overflow-y: auto
+}
+
+.nofile_title {
+    margin-top: 5px
+}
+
+.get_score_select {
+    line-height: 25px;
+    width: auto;
+    height: 25px;
+    text-align: center;
+    font-size: 12px;
+    color: #000;
+    outline: 0;
+    padding: 0 3px
+}
+
+.grade_radio {
+    font-size: 20px;
+    margin-bottom: 8px
+}
+
+.ex_list_height {
+    height: 90px
+}
+
+.ma_list_height {
+    height: 110px
+}
+@media screen and (max-width:767px) {
+    .body {
+        width: auto
+    }
+
+    .header {
+        width: auto;
+        height: 10rem
+    }
+
+    .header_name {
+        overflow: auto;
+        font-size: 17px;
+        margin: 30px 20px;
+        letter-spacing: 5px
+
+    }
+
+    .menu {
+        width: auto
+    }
+
+    .content {
+        margin-top: 50px
+    }
+
+    .grade_radio {
+        font-size: 14px;
+        margin-top: 10px
+    }
+
+    .list_span {
+        font-size: 16px
+    }
+
+    .btn_shadow {
+        float: right;
+        font-size: 14px;
+        margin-top: 15px
+    }
+
+    .input1 {
+        margin-left: 200px
+    }
+
+    .get_score {
+        margin-left: 0;
+        margin-top: 60px
+    }
+
+    .list-group-item {
+        height: 120px
+    }
+
+    .en_list_height {
+        height: 100px
+    }
+
+    .ex_list_height {
+        height: 85px
+    }
+
+    .ma_list_height {
+        height: 130px
+    }
+
+    .ma_btn_shadow {
+        margin-top: 5px
+    }
+}
+
+@media screen and (min-width:767px) {
+    body {
+        min-width: 1500px
+    }
+
+    .header {
+        width: 100%;
+        height: 200px
+    }
+
+    .header_name {
+        font-size: 50px;
+        margin: 60px 100px;
+        letter-spacing: 10px
+
+    }
+
+    .content {
+        width: 880px;
+        height: auto;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 50px
+    }
+
+    .menu {
+        max-width: 1100px;
+        min-width: 880px
+    }
+
+    .input1 {
+        margin-left: 770px
+    }
+}

@@ -1,0 +1,35 @@
+<!--
+ * @Description: 对象简化赋值
+ * @Author: Luminary
+ * @Date: 2020-03-04 16:55:22
+ * @LastEditTime: 2022-04-05 16:11:43
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>对象简化赋值</title>
+  </head>
+  <body>
+    <script>
+      // 如果属性名和变量名相同，可以简写
+      let name = 'Luminary'
+      let city = 'Hangzhou'
+
+      // 方法可以省略 function 关键字
+      let person = {
+        name, // name:name,
+        city, //city:city
+        // sayHello:function(){
+        //     console.log('你好吗！')
+        // }
+        sayHello() {
+          console.log('你好吗！')
+        }
+      }
+      console.log(person)
+      person.sayHello()
+    </script>
+  </body>
+</html>

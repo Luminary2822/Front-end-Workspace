@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.acreath.gasycp.mapper.UserMapper">
+    <resultMap id="baseMap" type="com.acreath.gasycp.po.LoginUserPO">
+        <result column="id" property="id"/>
+        <result column="login_name" property="loginName"/>
+        <result column="identitys" property="identitys"/>
+        <result column="org_id" property="orgId"/>
+        <result column="is_score" property="isScore"/>
+        <result column="detail_info" property="detailInfo"/>
+    </resultMap>
+
+
+    <select id="getUserAccountByLoginNameAndPassword" resultMap="baseMap">
+        SELECT *
+        FROM userAccount
+        WHERE
+        username = #{username}
+        AND
+        password = #{password}
+    </select>
+    
+    <update id="updatePassword" >
+      UPDATE
+      userAccount
+      SET
+      password = #{newPassword}
+      WHERE
+      username = #{username}
+    </update>
+
+    <select id="searchAccount" resultMap="baseMap">
+        SELECT *
+        FROM
+        userAccount
+        WHERE
+        username = #{username}
+    </select>
+    <update id="upDateIsScore" >
+        UPDATE
+        userAccount
+        SET
+        is_score = 1
+        where
+        id = #{id}
+    </update>
+    <select id="allByType" resultMap="baseMap">
+        SELECT *
+        FROM
+        userAccount
+        where
+        identitys = #{identitys};
+    </select>
+
+    <select id="admByType" resultMap="baseMap">
+        SELECT *
+        FROM
+        userAccount
+        where
+        identitys
+        in
+        (#{identitys},#{identitysTwo})
+    </select>
+
+    <select id="searchAccountById" resultMap="baseMap">
+        SELECT *
+        FROM
+        userAccount
+        WHERE
+        id = #{accountId}
+    </select>
+
+    <select id="searchAccountByLoginName" resultMap="baseMap">
+        SELECT  *
+        FROM
+        userAccount
+        WHERE
+        login_name = #{loginName}
+    </select>
+
+    <select id="searchAccountByLoginNameList" resultMap="baseMap">
+        SELECT  *
+        FROM
+        userAccount
+        WHERE
+        login_name = #{loginName}
+        AND
+        identitys !=  1
+    </select>
+
+
+    <select id="searchAccountByLoginNameListCont" resultType="java.lang.Integer">
+        SELECT
+        COUNT(0)
+        FROM
+        userAccount
+        WHERE
+        login_name = #{loginName}
+        AND
+        identitys !=  1
+    </select>
+
+    <select id="allTypeCont" resultType="java.lang.Integer">
+        SELECT
+        COUNT(0)
+        FROM
+        userAccount
+        where
+        identitys = #{identitys};
+    </select>
+
+
+</mapper>

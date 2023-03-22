@@ -1,0 +1,94 @@
+<!--
+ * @Description: 
+ * @Author: Luminary
+ * @Date: 2020-03-04 17:30:18
+ * @LastEditTime: 2022-04-05 18:02:03
+-->
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <title>小黑播放器</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="googlebot" content="noindex, nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="./assets/css/player.css" />
+</head>
+
+<body>
+  <!-- 主体区域 -->
+  <section id="player">
+    <!-- 输入框 -->
+    <header class="header">
+      <h1>
+      <a href="http://www.itheima.com/"><img src="./assets/img/black.png" alt="" /></a>
+
+        小黑播放器</h1>
+      <input v-model='inputValue' @keyup.enter="searchMusic" autofocus="autofocus" autocomplete="off"
+        placeholder="请输入歌名" class="new-todo" />
+    </header>
+    <!-- 列表区域 -->
+    <section class="main">
+      <ul class="music-list">
+        <li class="music" v-for="(item,index) in musicList" :key="index">
+          <div class="view">
+            <span class="index">{{index+1}}.</span>
+            <label>{{ item.name }}</label>
+            <button class="play" @click="playMusic(item.id)"></button>
+          </div>
+        </li>
+       
+      </ul>
+    </section>
+    <!-- 统计和清空 -->
+    <footer class="footer">
+      <audio :src="musicUrl" controls></audio>
+    </footer>
+  </section>
+  <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!-- axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    let app = new Vue({
+      el: "#player",
+      data: {
+        inputValue: '',
+        musicList: [],
+        musicUrl:''
+      },
+      methods: {
+        
+        searchMusic() {
+          axios({
+            url: "https://autumnfish.cn/search",
+            method: "get",
+            params: {
+              keywords: this.inputValue
+            }
+          }).then(res => {
+            // console.log(res)
+            this.musicList = res.data.result.songs
+          })
+        },
+        playMusic(id){
+          axios({
+            url:"https://autumnfish.cn/song/url",
+            method:'get',
+            params:{
+              id
+            }
+          }).then(res=>{
+            // window.console.log(res)
+            this.musicUrl = res.data.data[0].url
+          })
+        }
+      },
+    })
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <!--强制使用Webkit内核-->
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <script src="../scripts/jquery.min.js"></script>
+    <link rel="stylesheet" href="../style/bootstrap.min.css">
+    <link rel="stylesheet" href="../style/mass_questionnaire.min.css">
+    <script src="../scripts/bootstrap.min.js"></script>
+    <!--<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>-->
+    <link rel="stylesheet" href="../static/style/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/style/mass_questionnaire.min.css">
+    <title>群众问卷</title>
+    <!--弹出提示框-->
+    <script>
+        $(function(){
+            if(!!window.ActiveXObject||"ActiveXObject" in window){
+                alert("提示: 您在使用的浏览器内核版本可能导致浏览异常。\n" +
+                    "\n" +
+                    "解决方法（任选其一）：\n" +
+                    "请切换到当前浏览器的极速模式\n" +
+                    "请安装Chrome(谷歌浏览器）、Firefox（火狐）浏览器、QQ浏览器、搜狐浏览器、360浏览器来使用本系统\n")
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="header">
+            <label class="header_name">高安市2018年下半年“双优”工作满意度评价</label>
+        </div>
+        <div class="content">
+            <div class="question">
+                <p class="ques_head">亲爱的市民朋友，非常感谢您百忙之中抽空参与2018年下半年优化环境优质服务（简称“双优”)工作满意度评价工作。</p>
+                <p class="ques_head"><b>一、对全市乡镇（街道）评价</b>（对全市23个乡镇（街道）办热情高效、公道正派、乡村秀美、清正廉洁等2018年下半年“双优”工作进行满意度评价，评出3-6个您最满意的乡镇（街道）。）</p>
+                <div class="div_box">
+                    <label class="checkbox-inline"><input type="checkbox" value="独城镇" name="box">独城镇</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="八景镇" name="box">八景镇</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="村前镇" name="box">村前镇</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="新街镇" name="box">新街镇</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="龙潭镇" name="box">龙潭镇</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="伍桥镇" name="box">伍桥镇</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="石脑镇" name="box">石脑镇</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="华林山镇" name="box">华林山</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="杨圩镇" name="box">杨圩镇</label>
+                </div>
+                <div class="div_box">
+                    <label class="checkbox-inline"><input type="checkbox" value="荷岭镇" name="box">荷岭镇</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="建山镇" name="box">建山镇</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="黄沙岗镇" name="box">黄沙岗镇</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="相城镇" name="box">相城镇</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="上湖乡" name="box">上湖乡</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="灰埠镇" name="box">灰埠镇</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="田南镇" name="box">田南镇</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="太阳镇" name="box">太阳镇</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="蓝坊镇" name="box">蓝坊镇</label>
+                </div>
+                <div class="div_box">
+                    <label class="checkbox-inline"><input type="checkbox" value="汪家圩乡" name="box">汪家圩乡</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="瑞州街道" name="box">瑞州街道</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="大城镇" name="box">大城镇</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="祥符镇" name="box">祥符镇</label>
+                </div>
+            </div>
+
+            <div class="question" style="margin-top: 15px;">
+                <p class="ques_head"><b>二、对市直部门评价</b>（对全市176个市直部门集中办事、热情高效、执法公正、作风正派、清正廉洁等2018年下半年“双优”工作进行满意度评价，评出5-15个您最满意的部门。）</p>
+                <label style="margin-top: 10px;">行政服务(窗口)类</label>
+                <div class="div_box">
+                    <label class="checkbox-inline"><input type="checkbox" value="民政局" name="box2">民政局</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="残联" name="box2">残联</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="商务局" name="box2">商务局</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="货运产业基地" name="box2">货运产业基地</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="档案局" name="box2">档案局</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="体育局" name="box2">体育局</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="旅发委" name="box2">旅发委</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="粮食局" name="box2">粮食局</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="教育局" name="box2">教育局</label>
+                </div>
+                <div class="div_box">
+                    <label class="checkbox-inline"> <input type="checkbox" value="人防办" name="box2">人防办</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="财政局" name="box2">财政局</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="环保局" name="box2">环保局</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="人社局" name="box2">人社局</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="公安局" name="box2">公安局</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="交通局" name="box2">交通局</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="房管局" name="box2">房管局</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="城管局" name="box2">城管局</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="城建局" name="box2">城建局</label>
+                </div>
+                <div class="div_box">
+                    <label class="checkbox-inline"><input type="checkbox" value="司法局" name="box2">司法局</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="科技局" name="box2">科技局</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="工信委" name="box2">工信委</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="水利局" name="box2">水利局</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="畜牧水产局" name="box2">畜牧水产局</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="交警大队" name="box2">交警大队</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="森林公安局" name="box2">森林公安局</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="林业局" name="box2">林业局</label>
+                </div>
+                <div class="div_box">
+                    <label class="checkbox-inline"><input type="checkbox" value="发改委" name="box2">发改委</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="市场监管局" name="box2">市场监管局</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="卫计委" name="box2">卫计委</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="文广新局" name="box2">文广新局</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="安监局" name="box2">安监局</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="农机局" name="box2">农机局</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="行政服务中心" name="box2">行政服务中心</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="农业局" name="box2">农业局</label>
+                </div>
+                <div class="div_box">
+                    <label class="checkbox-inline"><input type="checkbox" value="国土局" name="box2">国土局</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="供电公司" name="box2">供电公司</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="水务集团" name="box2">水务集团</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="税务局" name="box2">税务局</label>
+                </div>
+                <label class="type">服务社会类</label>
+                <div class="div_box">
+                    <label class="checkbox-inline"><input type="checkbox" value="科协" name="box2">科协</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="文联" name="box2">文联</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="团委" name="box2">团委</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="农工部" name="box2">农工部</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="上游水库" name="box2">上游水库</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="供销社" name="box2">供销社</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="农业综合办" name="box2">农业综合办</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="总工会" name="box2">总工会</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="社联" name="box2">社联</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="妇联" name="box2">妇联</label>
+                </div>
+
+                <div class="div_box">
+                    <label class="checkbox-inline"><input type="checkbox" value="审计局" name="box2">审计局</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="机关工委" name="box2">机关工委</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="编办" name="box2">编办</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="党校" name="box2">党校</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="机关事务局" name="box2">机关事务局</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="法院" name="box2">法院</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="检察院" name="box2">检察院</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="老干局" name="box2">老干局</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="信访局" name="box2">信访局</label>
+                </div>
+                <div class="div_box">
+                    <label class="checkbox-inline"><input type="checkbox" value="相城垦殖场" name="box2">相城垦殖场</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="史志办" name="box2">史志办</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="统计局" name="box2">统计局</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="台办" name="box2">台办</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="城投公司" name="box2">城投公司</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="口岸办" name="box2">口岸办</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="瑞阳新区" name="box2">瑞阳新区</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="接待办" name="box2">接待办</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="维稳办" name="box2">维稳办</label>
+                </div>
+                <div class="div_box">
+                    <label class="checkbox-inline"><input type="checkbox" value="教师进修学校" name="box2">教师进修学校</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="高安中学" name="box2">高安中学</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="工商联" name="box2">工商联</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="外侨办（侨联）" name="box2">外侨办（侨联）</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="高安三中" name="box2">高安三中</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="高安二中" name="box2">高安二中</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="石脑中学" name="box2">石脑中学</label>
+                </div>
+                <div class="div_box">
+                    <label class="checkbox-inline"><input type="checkbox" value="扶贫移民办" name="box2">扶贫移民办</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="灰埠中学" name="box2">灰埠中学</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="人民医院" name="box2">人民医院</label>
+                </div>
+                <label class="type">园区类</label>
+                <div class="div_box">
+                    <label class="checkbox-inline"><input type="checkbox" value="工业园区" name="box2">工业园区</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="大城开发区" name="box2">大城开发区</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="建陶基地" name="box2">建陶基地</label>
+                </div>
+                <label class="type">条管类</label>
+                <div class="div_box">
+                    <label class="checkbox-inline"><input type="checkbox" value="电信高安公司" name="box2">电信高安公司</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="移动高安公司" name="box2">移动高安公司</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="广电网络公司" name="box2">广电网络公司</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="联通高安公司" name="box2">联通高安公司</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="邮政高安公司" name="box2">邮政高安公司</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="气象局" name="box2">气象局</label>
+                </div>
+                <div class="div_box">
+                    <label class="checkbox-inline"><input type="checkbox" value="农业银行高安支行" name="box2">农业银行高安支行</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="建设银行高安支行" name="box2">建设银行高安支行</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="银监办" name="box2">银监办</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="工商银行高安支行" name="box2">工商银行高安支行</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="人民银行高安支行" name="box2">人民银行高安支行</label>
+                </div>
+                <div class="div_box">
+                    <label class="checkbox-inline"><input type="checkbox" value="九江银行高安支行" name="box2">九江银行高安支行</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="邮政储蓄银行高安支行" name="box2">邮政储蓄银行高安支行</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="兴业银行高安支行" name="box2">兴业银行高安支行</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="赣州银行高安支行" name="box2">赣州银行高安支行</label>
+                </div>
+                <div class="div_box">
+                    <label class="checkbox-inline"><input type="checkbox" value="烟草专卖局" name="box2">烟草专卖局</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="国家统计局高安调查队" name="box2">国家统计局高安调查队</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="公路分局" name="box2">公路分局</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="消防大队" name="box2">消防大队</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="江西新华发行集团高安分公司" name="box2">江西新华发行集团高安分公司</label>
+                </div>
+
+                <div class="div_box">
+                    <label class="checkbox-inline"><input type="checkbox" value="人寿财险高安支公司" name="box2">人寿财险高安支公司</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="人保财险高安支公司" name="box2">人保财险高安支公司</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="上饶银行高安支行" name="box2">上饶银行高安支行</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="人寿保险高安支公司" name="box2">人寿保险高安支公司</label>
+                </div>
+
+                <div class="div_box">
+                    <label class="checkbox-inline"><input type="checkbox" value="农业发展银行高安支行" name="box2">农业发展银行高安支行</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="江西银行高安支行" name="box2">江西银行高安支行</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="农商银行" name="box2">农商银行</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="中国银行高安支行" name="box2">中国银行高安支行</label>
+                </div>
+
+                <div class="div_box">
+                    <label class="checkbox-inline"><input type="checkbox" value="住房公积金高安办事处" name="box2">住房公积金高安办事处</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="宜春汽运公司高安分公司" name="box2">宜春汽运公司高安分公司</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="地方海事处" name="box2">地方海事处</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="水文站" name="box2">水文站</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="盐业公司" name="box2">盐业公司</label>
+                </div>
+                <div class="div_box">
+                    <label class="checkbox-inline"><input type="checkbox" value="中石油高安片区" name="box2">中石油高安片区</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="太平洋财险高安支公司" name="box2">太平洋财险高安支公司</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="大地财险高安支公司" name="box2">大地财险高安支公司</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="中石化高安石油分公司" name="box2">中石化高安石油分公司</label>
+                </div>
+
+
+            </div>
+            <div class="text_advice">
+                <form role="form">
+                    <div class="form-group">
+                        <label style="font-weight: normal">最后，请您对高安市“双优”工作提出宝贵意见和建议：</label>
+                        <textarea class="form-control" rows="3" id="text"></textarea>
+                    </div>
+                </form>
+            </div>
+
+            <div><button onclick="submit()" class="confirm">提交</button></div>
+        </div>
+        <div class="footer">
+            <span>
+                高安市2018年度下半年“双优”工作满意度评价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                地址：江西省高安市锦惠中路376号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                邮政编码：330800&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                联系电话：0795-5288156
+            </span>
+        </div>
+    </div>
+</body>
+<script>
+    /*提交逻辑：只选一类的话，必须乡镇选三个或三个以上，市直选五个或五个以上才可以提交，如果选两类的话，必须两类都满足三个或三个以上，五个或五个以上。除了这些情况外，都不可以提交*/
+    function submit() {
+        var obj = document.getElementsByName("box");
+        var obj2 = document.getElementsByName("box2");
+        var txt = document.getElementById("text").value;
+        // var txt2=document.getElementById("text2").value;
+        var check_val = [];
+        var check_val2 = [];
+        for (var k in obj) {
+            if (obj[k].checked)
+                check_val.push(obj[k].value);
+
+        }
+        for (var k in obj2) {
+            if (obj2[k].checked)
+                check_val2.push(obj2[k].value);
+        }
+        if (check_val.length > 0 && check_val.length < 3) {
+            alert('你好，你对乡镇满意单位未达到3个，请你选够3个后再提交，谢谢');
+        }
+        if (check_val.length > 6) {
+            alert('你好，你对乡镇满意单位超过6个，请您选择3-6个后再提交，谢谢');
+        }
+        if (check_val2.length < 5 && check_val2.length > 0) {
+            alert('你好，你对市直单位满意单位未达到5个，请你选够5个后再提交，谢谢');
+        }
+        if (check_val2.length > 15 ) {
+            alert('你好，你对市直单位满意单位超过15个，请你选择5-15个后再提交，谢谢');
+        }
+        if ((check_val.length >= 3 && check_val.length <= 6 && check_val2.length === 0) || (check_val2.length >= 5 && check_val.length <= 15 && check_val.length === 0) ||
+            (check_val.length >= 3 && check_val2.length >= 5)) {
+                if(check_val2.length === 0)
+                    check_val2="";
+                if(check_val.length === 0)
+                    check_val="";
+            $.ajax({
+                url: "/org/massQuestion",
+                type: "post",
+                dataType: "json",
+                data: {
+                    "check_val": check_val,     //乡镇
+                    "check_val2":check_val2,    //市直
+                    "text":txt,               //建议
+                
+                },
+                success: function (res) {
+                    if (res.code !== 200) {
+                        alert("您已提交");
+                        return false;
+                    }
+                    else {
+                        alert("提交成功!");
+                    }
+                },
+                error: function () {
+                    alert("提交失败!");
+                    return false;
+                }
+            });
+
+        }
+
+    }
+</script>
+
+</html>

@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>小黑播放器</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="googlebot" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/player.css" />
+  </head>
+
+  <body>
+    <!-- 主体区域 -->
+    <section id="player">
+      <header class="header">
+        <h1>
+          <a href="http://www.itheima.com/">
+            <img src="./assets/img/black.png" alt="" />
+          </a>
+          小黑播放器
+        </h1>
+        <!-- 输入框 -->
+        <input placeholder="请输入歌名" class="new-todo" />
+      </header>
+      <!-- 列表区域 -->
+      <section class="main">
+        <ul class="music-list">
+          <li class="music">
+            <div class="view">
+              <span class="index">1.</span>
+              <label>死了都要爱</label>
+              <button class="play"></button>
+            </div>
+          </li>
+          <li class="music">
+            <div class="view">
+              <span class="index">2.</span>
+              <label>last dance</label>
+              <!-- 播放按钮 -->
+              <button class="play"></button>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <!-- 音频标签 -->
+      <footer class="footer">
+        <audio src="" controls></audio>
+      </footer>
+    </section>
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      /*
+        需求：
+        1. 回车搜歌
+            接口1:歌曲搜索
+            地址:https://autumnfish.cn/search
+            方法:get
+            参数:keywords  搜索关键字
+        2. 列表渲染
+        3. 点击播放
+            接口2:获取歌曲播放地址
+            地址:https://autumnfish.cn/song/url
+            方法:get
+            参数:id  歌曲id
+      */
+    </script>
+  </body>
+</html>

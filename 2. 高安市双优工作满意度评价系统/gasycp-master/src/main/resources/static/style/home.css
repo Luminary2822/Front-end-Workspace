@@ -1,0 +1,164 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+
+body {
+	width: 100%;
+	height: auto;
+	margin: 0;
+	padding: 0;
+	min-width: 1500px;
+}
+
+a:hover,
+a:link,
+a:visited {
+	text-decoration: none;
+	color: #C50001;
+	font-weight: bold;
+
+}
+
+.login_a {
+	overflow: auto;
+	width: 100px;
+	height: 50px;
+	margin-left: 82.5%;
+	margin-top: -3%;
+}
+
+.header {
+	background-color: #c50001;
+	background-size: 100% 100%;
+	width: 100%;
+	height: 200px;
+	border-bottom: 7px solid #C50001;
+}
+
+.header_name {
+	color: white;
+	font-size: 50px;
+	letter-spacing: 10px;
+	margin: 60px 100px;
+	font-weight: bold;
+}
+
+.main_box {
+	width: 100%;
+	margin: 10px 0;
+	background-image: url(../images/home_bg.jpg);
+	opacity: 0.9;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+
+}
+
+.navigation {
+
+	border: 1px solid black;
+	min-width: 855px;
+	background: #f2f2f2;
+	height: 50px;
+	width: 100%;
+	margin-top: -55px;
+	width: 90%;
+	margin-left: 5%;
+}
+
+.navigation_link {
+	width: 50%;
+	float: left;
+	font-size: 18px;
+	line-height: 50px;
+	margin-left: 50px;
+}
+
+.navigation_head {
+	width: 30%;
+	float: right;
+}
+
+.head_image {
+	width: 40px;
+	height: 40px;
+	float: right;
+	margin-top: 5px;
+	position: relative;
+	right: 50px;
+}
+
+.login {
+	font-size: 20px;
+	line-height: 50px;
+	margin-left: 10px;
+	float: right;
+	right: 50px;
+	position: relative;
+}
+
+.home_img {
+	margin-top: 20%;
+	/* padding: 50px; */
+	margin-left: 10%;
+	width: 80%;
+	height: 60%;
+}
+
+.main {
+	min-width: 855px;
+	height: 600px;
+}
+
+.details {
+	color: white;
+	font-weight: bold;
+	line-height: 30px;
+	font-family: "Times New Roman", Georgia, Serif;
+	padding: 20px;
+	font-size: 20px;
+	width: 100%;
+	height: 90%;
+	margin-left: 112%;
+	margin-top: 10%;
+	/* background: lightgreen; */
+}
+
+.main_left {
+	float: left;
+	display: inline;
+	width: 50%;
+	position: relative;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.main_right {
+	float: left;
+	display: inline;
+	width: 50%;
+	position: relative;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.footer {
+	/* margin-top: 10px; */
+	width: 100%;
+	height: 80px;
+	text-align: center;
+	padding-top: 25px;
+	position: relative;
+	bottom: 0;
+	border-top: 7px solid #C50001;
+}
+
+.footer span {
+	font-size: 15px;
+	padding-bottom: 5px;
+}
