@@ -1,2 +1,3 @@
-# Vue-workspace
-These are vue projects.
+# Front-end Workspace
+These are Front-end related projects.
+
