@@ -1,0 +1,44 @@
+<!--
+ * @Description: 
+ * @Author: Luminary
+ * @Date: 2022-04-06 13:36:17
+ * @LastEditTime: 2022-04-06 13:39:45
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ES5
+        // bind(this)将上下文的 `this` 传递给函数内部，否则this指向当前执行的window，this.id为undefined
+        var obj = {
+            id: 42,
+            counter: function counter() {
+            setTimeout(function() {
+                    console.log(this.id);
+                }.bind(this), 1000);
+            }
+        };
+        // ES6
+        // 箭头函数不能绑定this关键字，所以它将在词法上向上查找，然后使用定义它所在的作用域。
+        var obj = {
+            id: 42,
+            counter: function counter() {
+            setTimeout(()=>{
+                    console.log(this.id);
+                }, 1000);
+            }
+        };
+
+        
+    obj.counter()
+
+    </script>
+    
+</body>
+</html>

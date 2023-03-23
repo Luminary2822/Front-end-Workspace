@@ -1,0 +1,42 @@
+<!--
+ * @Description: 
+ * @Author: Luminary
+ * @Date: 2022-05-01 15:50:40
+ * @LastEditTime: 2022-05-01 16:10:58
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* circle_concentric中间的圆，box-shadow外面扩展的圆，::before最内部的圆*/
+    #circle_concentric{
+        background-color: orangered;
+        width: 150px;
+        height: 150px;
+        margin: 30px;
+        border-radius: 50%;
+        position: relative;
+        box-shadow: 0 0 0 30px #FECFBD;
+    }
+    /* ::before在circle_concentric加样式，通过定位调整让其水平垂直居中*/
+    #circle_concentric::before{
+        content: '';
+        width: 80px;
+        height: 80px;
+        background-color: green;
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+    }
+</style>
+<body>
+    <div id="circle_concentric"></div>
+</body>
+</html>

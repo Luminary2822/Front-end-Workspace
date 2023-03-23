@@ -1,0 +1,48 @@
+<!--
+ * @Description: 
+ * @Author: Luminary
+ * @Date: 2022-05-01 14:47:19
+ * @LastEditTime: 2022-05-01 15:05:48
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* 圆 */
+    .circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: yellowgreen;
+    }
+    /* 圆 */
+    .circle_clip {
+        width: 100px;
+        height: 100px;
+        background: orangered;
+        clip-path: circle(50% at 50% 50%);    /* 圆心(50% 50%)  半径50% */
+    }
+    /* 上半圆 */
+    .half-circle {
+      width: 100px;
+      height: 50px;
+      background-color: skyblue;
+      border-top-left-radius: 50px; 
+      border-top-right-radius: 50px;
+ }
+
+</style>
+<body>
+    <!-- border实现圆 -->
+    <div class="circle"></div>
+    <!--clip-path实现圆-->
+    <div class="circle_clip"></div>
+    <!-- border实现上半圆 -->
+    <div class="half-circle">半圆</div>
+</body>
+</html>

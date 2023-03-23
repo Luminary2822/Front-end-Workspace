@@ -1,0 +1,79 @@
+<!--
+ * @Description: 
+ * @Author: Luminary
+ * @Date: 2022-05-02 18:20:53
+ * @LastEditTime: 2022-05-02 18:59:02
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>双飞翼布局</title>
+</head>
+<style>
+    .header, .footer {
+        border: 1px solid #333;
+    }
+    /* container不需要再设置padding，left和right也不需要相对位置定位 */
+    .container {
+        /* 触发BFC清除浮动，防止因为三栏浮动的设置footer会跑上面去*/
+        overflow: hidden;    
+    }
+    .left, .middle, .right{
+        min-height: 130px;  
+        float: left;
+    }
+    /* 盒子模型因为已经设置 width: 100%;，所以不能给middle添加margin属性，*/
+    .middle {
+        width: 100%;
+        background: skyblue;    
+    }
+    /* 再创造一个内容层，将要显示的内容放到这里，给它设置margin */
+    .middle-content {
+        margin-left: 200px;
+        margin-right: 220px; 
+    }
+    .left {
+        width: 200px;   
+        background: orangered;   
+        /* left上移到container的最左边*/
+        margin-left: -100%;
+    }
+    .right {
+        width: 220px;
+        background: yellowgreen;  
+        /* right上移到container的最右边*/
+        margin-left: -220px;
+        
+    }
+    div {
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="header">
+        <h4>header</h4>
+    </div>
+    <div class="container">
+        <!-- 先写middle,然后是left和right，因为需要先渲染middle -->
+        <div class="middle">
+            <!-- 使用margin在添加一个内容层 -->
+            <div class="middle-content">
+                <h4>middle</h4>
+                <p>middle-content</p>
+            </div>
+        </div>
+        <div class="left">
+            <h4>left</h4>
+            <p>left-content</p>
+        </div>
+        <div class="right">
+            <h4>right</h4>
+            <p>right-content</p>
+        </div>
+    </div>
+    <div class="footer"><h4>footer</h4></div>
+</body>
+</html>

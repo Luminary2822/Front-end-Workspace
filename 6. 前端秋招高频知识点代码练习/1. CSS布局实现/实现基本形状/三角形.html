@@ -1,0 +1,63 @@
+<!--
+ * @Description: 
+ * @Author: Luminary
+ * @Date: 2022-05-01 14:30:15
+ * @LastEditTime: 2022-05-07 22:41:34
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* 一个正方形内四个三角形 */
+    .triangle {
+        width: 0;
+        height: 0;
+        border: 100px solid;
+        /* 如果只设置一个颜色，就是一个有颜色的正方形 */
+        border-color: orangered skyblue gold yellowgreen;
+    }
+    /* 等腰直角三角形 */
+    .triangle_isosceles{
+        width: 0;
+        height: 0;
+        border-width: 40px;
+        border-style: solid;
+        border-color: transparent transparent gold transparent; 
+        /*上右下左，原是在一个正方形内的，要哪边的就把哪边的border设置出颜色，其他设置为透明*/
+        /* 加上border-radius即可实现扇形，下面为圆边 */
+        border-radius : 50%; 
+    }
+    /* 等边三角形：边长为128，高为120 */
+    .triangle_equal{
+        width: 0;
+		height: 0;
+		border-left: 69px solid transparent;  
+		border-right: 69px solid transparent;  
+		border-bottom: 120px solid orangered; 
+    }
+    /* 一个普通的三角形，用clip-path*/
+    .triangle_ori {
+        width: 100px;
+        height: 100px;
+        background: skyblue;
+        /* 对应三角形三个顶点，左下，上，右下*/
+        clip-path: polygon(0 100%, 50% 0, 100% 100%);   
+    }
+
+</style>
+<body>
+    <!-- 一个正方形，包含四个三角形 -->
+    <div class="triangle"></div>
+    <!-- border实现等腰直角三角形 -->
+    <div class="triangle_isosceles"></div>
+    <!-- border实现等边三角形-->
+    <div class="triangle_equal"></div>
+    <!-- 利用clip-path实现一个普通三角形 -->
+    <div class="triangle_ori"></div>
+</body>
+</html>

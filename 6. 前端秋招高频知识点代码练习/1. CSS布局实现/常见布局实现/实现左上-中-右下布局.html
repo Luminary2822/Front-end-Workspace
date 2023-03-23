@@ -1,0 +1,50 @@
+<!--
+ * @Description: 
+ * @Author: Luminary
+ * @Date: 2022-04-14 16:54:21
+ * @LastEditTime: 2022-05-15 16:08:48
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实现一个左上-中-右下的布局</title>
+</head>
+<body>
+    <div class="box"> 
+        <span class="item"></span>
+        <span class="item"></span>
+        <span class="item"></span>
+    </div>
+</body>
+<style>
+.box{
+    display: flex;
+     /* 设置column时align-self会在横轴上对齐，设置row时align-self会在纵轴上对齐*/
+     /* 因为column布局时，主轴是竖轴，交叉轴是横轴，所以justify设置在竖轴上，align设置在横轴上*/
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100px; 
+    height: 100px;
+    background-color: ant iquewhite;
+    }
+span{
+    width: 30px;
+    height: 30px; 
+    border-radius: 50%;
+    background-color: brown;
+}
+.item:nth-child(1){
+    align-self: flex-start;
+}
+.item:nth-child(2){
+    align-self: center ; 
+    border-radius: 0%;
+}
+.item:nth-child(3){
+    align-self: flex-end;
+}
+</style>
+</html>

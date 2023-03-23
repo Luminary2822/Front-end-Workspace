@@ -1,0 +1,46 @@
+<!--
+ * @Description: 
+ * @Author: Luminary
+ * @Date: 2022-07-31 21:34:31
+ * @LastEditTime: 2022-07-31 21:49:31
+-->
+<!doctype html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <title>浮动布局实现两边固定中间自适应</title>
+    <style>
+        html, body {
+            margin: 0; /*若不设置，默认为8px*/
+        }
+        .container>div {
+            height: 100px;
+        }
+        .aside-left{
+            float: left;
+            width: 300px;
+            background-color: #a9ff29;
+        }
+        .middle {
+            margin: 0 200px 0 300px;
+            background-color: #ffb91b;
+        }
+        .aside-right {
+            float: right;
+            width: 200px;
+            background-color: #40c3ff;
+        }
+    </style>
+</head>
+ 
+<body>
+ 
+<div class="container">
+    <div class="aside-left">左侧</div>
+    <div class="aside-right">右侧</div>
+    <div class="middle">中间</div>
+</div>
+ 
+</body>
+</html>

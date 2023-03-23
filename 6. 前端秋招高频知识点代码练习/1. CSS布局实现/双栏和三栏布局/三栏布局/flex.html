@@ -1,0 +1,49 @@
+<!--
+ * @Description: 
+ * @Author: Luminary
+ * @Date: 2022-05-02 16:39:54
+ * @LastEditTime: 2022-05-02 16:41:53
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .flex_box { 
+        display: flex;
+    }
+    .left {
+        width: 300px;
+        height: 100px;
+        background-color: #e65;
+    }
+    .right {
+        width: 300px;
+        height: 100px;
+        background-color: #ccc;
+    }
+    .main {
+        height: 100px;
+        background-color: bisque;
+        /* 设置自动填充容器空间 */
+        flex: 1;
+    }
+    /* 这个是我为了显示自己加的字体垂直居中的样式，不用管 */
+    .main h4{
+        line-height: 50px;
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="flex_box">
+        <div class="left"></div>
+        <!-- 这里注意一下，这个中间元素在这里要放在中间 -->
+        <div class="main"><h4>使用flex解决三栏布局</h4></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!--
+ * @Description: 
+ * @Author: Luminary
+ * @Date: 2022-05-02 16:36:40
+ * @LastEditTime: 2022-05-02 16:39:14
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .position{
+        position: relative;
+    }
+    .left {
+        width: 300px;
+        height: 100px;
+        background-color: #e65;
+        /* 设置绝对定位 */
+        position: absolute;
+        left: 0;
+    }
+    .right {
+        width: 300px;
+        height: 100px;
+        background-color: #ccc;
+        /* 设置绝对定位 */
+        position: absolute;
+        right: 0;
+    }
+    .main {
+        height: 100px;
+        background-color: bisque;
+        /* 设置左右margin*/
+        margin: 0 300px;
+    }
+    /* 这个是我为了显示自己加的字体垂直居中的样式，不用管 */
+    .main h4{
+        line-height: 100px;
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="position">
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="main"><h4>使用相对定位 + 绝对定位 + margin-left/right解决三栏布局</h4></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!--
+ * @Description: 
+ * @Author: Luminary
+ * @Date: 2022-05-01 22:35:53
+ * @LastEditTime: 2022-05-02 14:26:41
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        /* 设置父元素table布局，父元素还要设置一个width100%，不然右侧元素不显示*/
+        display: table;
+        width: 100%;
+    }
+    .left{
+        width: 300px;
+        height: 200px;
+        background-color: #FECFBD;
+        /* 左侧元素table-cel */
+        display: table-cell;
+    }
+    .right{
+        background-color: #549AE5;
+        height: 200px;
+        /* 右侧元素table-cell */
+        display: table-cell;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>

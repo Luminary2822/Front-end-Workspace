@@ -1,0 +1,43 @@
+<!--
+ * @Description: 
+ * @Author: Luminary
+ * @Date: 2022-05-01 22:13:50
+ * @LastEditTime: 2022-05-02 14:26:29
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+    .container{
+        /* 设置父元素开启BFC */
+        /* 解决因左侧元素浮动导致父元素高度塌陷问题，以免下面有内容块会自动排版上去 */
+        overflow: hidden;
+    }
+    .left{
+        width: 300px;
+        height: 200px;
+        background-color: #FECFBD;
+        /* 左侧元素向左浮动 */
+        float: left;
+    }
+    .right{
+        background-color: #549AE5;
+        height: 200px;
+        /* 不设置margin-left的话，右侧width是100%，但是左侧由于浮动会盖住部分右侧 */
+        margin-left: 300px;
+        
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>

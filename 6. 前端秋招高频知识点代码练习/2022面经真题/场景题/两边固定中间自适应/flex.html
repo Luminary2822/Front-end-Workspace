@@ -1,0 +1,55 @@
+<!--
+ * @Description: 
+ * @Author: Luminary
+ * @Date: 2022-07-31 21:39:30
+ * @LastEditTime: 2022-07-31 21:43:52
+-->
+<!doctype html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <title>flex布局实现两边固定中间自适应</title>
+    <style>
+        html, body {
+            margin: 0; /*若不设置，默认为8px*/
+        }
+ 
+        .container>div {
+            height: 100px;
+        }
+ 
+        .container {
+            display:flex;
+            flex-direction:row;
+        }
+ 
+        .aside-left {
+            width: 300px;
+            background-color: #a9ff29;
+        }
+ 
+        .middle {
+            flex-grow: 1;
+            left: 300px;
+            right: 200px;
+            background-color: #ffb91b;
+        }
+ 
+        .aside-right {
+            width: 200px;
+            background-color: #40c3ff;
+        }
+    </style>
+</head>
+ 
+<body>
+ 
+<div class="container">
+    <div class="aside-left">左侧</div>
+    <div class="middle">中间</div>
+    <div class="aside-right">右侧</div>
+</div>
+ 
+</body>
+</html>

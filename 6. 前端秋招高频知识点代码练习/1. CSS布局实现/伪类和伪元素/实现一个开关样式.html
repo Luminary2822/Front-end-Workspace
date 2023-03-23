@@ -1,0 +1,66 @@
+<!--
+ * @Description: 
+ * @Author: Luminary
+ * @Date: 2022-05-01 17:27:00
+ * @LastEditTime: 2022-05-01 17:28:12
+-->
+<!-- 题目 -->
+<!-- 用CSS实现一个开关样式，hover时触发，滑块为正方形 -->
+<!-- 尽量实现如下要求，可实现一部分：
+1. 开关动作均有动画过度（滑块移位、背景色）
+2. 只用一个dom元素实现
+3. 开关的高度是固定的，但宽度不固定，即宽度为未知父元素的100%，宽度始终大于高度 -->
+
+
+ <!-- 题目解读： -->
+    <!--由于只能使用一个 DOM 元素，而要区分滑块和背景的不同状态，故使用伪元素 ::before 在 .box 内部添加一个滑块，滑块采用 inline-block 方式展示，并且由 transition 属性指定过渡动画。
+对于背景也采用了 transition 来指定过渡动画，并且二者都通过 :hover 触发。 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        .box {
+      height: 50px;
+      width: 100%;
+      background-color: #c2d3e4;
+      transition: background-color 0.25s
+    }
+
+    .box::before {
+      content: "b";
+      color: white;
+      display: inline-block;
+      background-color: white;
+      position: relative;
+      top: 5px;
+      left: 5%;
+      height: 40px;
+      width: 35%;
+      transition: left 0.25s;
+    }
+
+    .box:hover {
+      background-color: #348fe4;
+    }
+
+    .box:hover::before {
+      left: 60%;
+    }
+    
+    /* 父元素宽度任意 */
+    .father {
+      width: 100px;
+    }
+
+</style>
+<body>
+    <div class="father">
+        <div class="box"></div>
+      </div>
+</body>
+</html>

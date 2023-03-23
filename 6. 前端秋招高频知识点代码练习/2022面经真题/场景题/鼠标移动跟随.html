@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实现鼠标移动跟随</title>
+</head>
+<style>
+    body{margin:0; padding:0}
+    #to_top {
+        width: 30px;
+        height: 40px;
+        padding: 20px;
+        font: 14px/20px arial;
+        text-align: center;
+        background: #06c;
+        position: absolute;
+        cursor: pointer;
+        color: #fff
+    }
+</style>
+<script>
+    window.onload = function(){
+     var oTop = document.getElementById("to_top");
+    //  鼠标跟随是在鼠标移动时发生的事情
+     document.onmousemove = function(evt){
+        // 兼容ie和ff,在ie下window.event表示event对象，而ff下，是给事件函数传一个参数，这个参数就表示事件对象。
+        var oEvent = evt || window.event;
+        // 滚动条距上边和左边滚动的距离，chrome用后面，其他浏览器用前面
+        var scrollleft = document.documentElement.scrollLeft || document.body.scrollLeft;
+        var scrolltop = document.documentElement.scrollTop || document.body.scrollTop;
+        // 鼠标的当前位置赋值给元素的位置值，加滚动距离是满足滚动到不是第一屏的时候，鼠标跟随效果依然存在
+        oTop.style.left = oEvent.clientX + scrollleft +10 +"px";
+        oTop.style.top = oEvent.clientY + scrolltop + 10 + "px";
+     }
+    }
+</script>
+<body style="height:1000px;">
+    <div id="to_top">鼠标跟随</div>
+</body>
+</html>

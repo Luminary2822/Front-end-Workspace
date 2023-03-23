@@ -1,0 +1,43 @@
+<!--
+ * @Description: 
+ * @Author: Luminary
+ * @Date: 2022-04-30 16:15:05
+ * @LastEditTime: 2022-04-30 16:17:09
+-->
+<html>
+<style>
+  body{
+    background-color: gray;
+  }
+  div{
+    color: blue;
+    width: 100px;
+    background-color: pink;
+    border: 10px solid;
+    padding: 20px;
+  }
+</style>
+<body>
+  <div></div>
+</body>
+</html>
+<!-- 
+问题：
+    1. 整个盒子的大小
+    2. padding的颜色
+    3. border的颜色
+    4. height为0了，看得见盒子吗？ 
+-->
+<!-- 
+答案
+    1. 整个盒子的大小 = 0 （因为height为0）
+    2. padding的颜色 = pink（继承content的颜色）
+    3. border的颜色 = blue（继承color字体的颜色，默认为black）
+    4.height为0了，看得见盒子吗？ （虽然height为0，但是看得见盒子，因为有border和padding）
+ -->
+ <!-- 
+这里需要注意：
+  1. 如果没有写border-style，那么边框的宽度不管设置成多少，都是无效的。
+  2. border-color的颜色默认跟字体颜色相同
+  3. padding颜色跟背景颜色相同
+  -->

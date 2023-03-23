@@ -1,0 +1,49 @@
+<!--
+ * @Description: 
+ * @Author: Luminary
+ * @Date: 2022-05-02 14:34:32
+ * @LastEditTime: 2022-05-02 15:54:24
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .left {
+        width: 300px;
+        height: 100px;
+        background-color: #e65;
+        /* 向左浮动 */
+        float: left;
+    }
+    .right {
+        width: 300px;
+        height: 100px;
+        background-color: #ccc;
+        /* 向右浮动 */
+        float: right;
+    }
+    .main {
+        /* 不能给宽度 */
+        height: 100px;
+        background-color: bisque;
+        /*设置margin的left和right为左右两边的宽度 */
+        margin: 0 300px;
+    }
+    /* 这个是我为了显示自己加的字体垂直居中的样式，不用管 */
+    .main h4{
+        line-height: 100px;text-align: center;
+    }
+</style>
+<body>
+    <div class="float">
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="main"><h4>使用浮动实现解决三栏布局</h4></div>
+    </div>
+</body>
+</html>

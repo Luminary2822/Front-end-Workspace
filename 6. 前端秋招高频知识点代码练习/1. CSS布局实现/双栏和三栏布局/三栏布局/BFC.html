@@ -1,0 +1,49 @@
+<!--
+ * @Description: 
+ * @Author: Luminary
+ * @Date: 2022-05-02 14:58:31
+ * @LastEditTime: 2022-05-02 16:37:48
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .left {
+        height: 100px;
+        background-color: #e65;
+        width: 300px;
+        /* 左边元素向左浮动 */
+        float: left;
+    }
+    .right {
+        height: 100px;
+        background-color: #ccc;
+        width: 300px;
+        /* 右边元素向右浮动 */
+        float: right;
+    }
+    .main {
+        height: 100px;
+        background-color: bisque;
+        /* 中间元素触发BFC */
+        overflow: hidden;
+    }
+    /* 不用管 */
+    .main h4{
+        line-height: 50px; 
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="BFC">
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="main"><h4>使用浮动 + 实现解决三栏布局</h4></div>
+    </div>
+</body>
+</html>

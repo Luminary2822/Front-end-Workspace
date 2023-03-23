@@ -1,0 +1,53 @@
+<!--
+ * @Description: 
+ * @Author: Luminary
+ * @Date: 2022-05-01 14:59:33
+ * @LastEditTime: 2022-05-01 15:04:14
+-->
+<!--
+ * @Description: 
+ * @Author: Luminary
+ * @Date: 2022-05-01 14:47:19
+ * @LastEditTime: 2022-05-01 14:51:43
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* 一个包含四个梯形的正方形 */
+    /* 如果将width和height设置为0，就是正方形内四个三角形 */
+    .square {
+        width: 100px;
+        height: 100px;
+        border-top: 50px solid orangered;
+        border-right: 50px solid skyblue;
+        border-bottom: 50px solid gold;
+        border-left: 50px solid yellowgreen;
+    }
+    /* 从中选取一个梯形 */
+    .trapezoidal{
+        width: 100px;
+        height: 100px;
+        /* 第一种写法，单独设置border-bottom-color */
+        border: 50px solid transparent;
+        border-bottom-color: gold;
+        /* 第二种写法， 单独写width和style，设置border-color，要哪边的就在哪边设置出颜色*/
+        /* border-width: 40px;
+        border-style: solid;
+        border-color: transparent transparent gold transparent;  */
+    }
+</style>
+<body>
+    <!-- 正方形包含梯形 -->
+    <div class="square"></div>
+    <!-- border实现梯形 -->
+    <div class="trapezoidal"></div>
+</body>
+</html>
+
+<!-- 一个正方形包含四个三角形的图，给正方形加上宽高就是一个正方形四个梯形，取下面即为一个梯形 -->

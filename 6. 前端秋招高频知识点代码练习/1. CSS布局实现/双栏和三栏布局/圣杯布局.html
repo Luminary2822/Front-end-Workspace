@@ -1,0 +1,99 @@
+<!--
+ * @Description: 
+ * @Author: Luminary
+ * @Date: 2022-05-02 17:47:54
+ * @LastEditTime: 2022-05-02 18:59:25
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圣杯布局</title>
+</head>
+<!-- 圣杯布局要求 -->
+<!-- 
+    （1）上、下部各自占领屏幕所有宽度。
+    （2）上下部之间的部分是一个三栏布局。
+    （3）三栏布局两侧宽度不变，中间部分自动填充整个区域。
+    （4）中间部分的高度是三栏中最高的区域的高度。 -->
+<!-- 
+    好处：重要的内容放在文档流前面，可以优先渲染；
+    原理：利用相对定位、浮动、负边距布局，而不添加额外标签 -->
+<style>
+    .header, .footer {
+        border: 1px solid #333;
+    }
+    .container {
+        /* 触发BFC清除浮动，防止因为三栏浮动的设置footer会跑上面去*/
+        overflow: hidden;    
+        /* 给外层container设置padding，留出left200px和right220px的位置 */
+        padding:0 220px 0 200px;
+
+    }
+    .left, .middle, .right{
+        min-height: 130px;   
+        float: left;
+        /* 设置相对定位 */
+        position: relative;
+    }
+    /* 三列左定宽200px，右定宽220px，中间middle的宽度100%占满 */
+    .middle {
+        width: 100%;
+        background: skyblue;    
+    }
+    .left {
+        width: 200px;   
+        background: orangered;   
+        /* float让他们三个处在同一行，只是middle会占据整个container，左右两块挤到下面 */
+        /* 所以要设置margin-left: -100%，让left向左移动container的宽度，回到上一行container的最左侧 */
+        margin-left: -100%;
+        /* 给left设置了相对定位，通过left拉到最左侧*/
+        left: -200px;
+    }
+    .right {
+        width: 220px;
+        background: yellowgreen;  
+        /* 对于right区域，设置 margin-left: -220px; 相当于外界看起来自身宽度消失，可以把right拉回第一行在middle的旁边 */
+        margin-left: -220px;
+        /* 给right设置了相对定位，将right区域拉到最右侧 */
+        right: -220px;
+        
+    }
+    div {
+        text-align: center;
+    }
+    body {
+        min-width: 620px;
+    }
+</style>
+<body>
+    <div class="header">
+        <h4>header</h4>
+    </div>
+    <div class="container">
+        <!-- 先写middle,然后是left和right，因为需要先渲染middle -->
+        <div class="middle">
+            <h4>middle</h4>
+            <p>middle-content</p>
+        </div>
+        <div class="left">
+            <h4>left</h4>
+            <p>left-content</p>
+        </div>
+        <div class="right">
+            <h4>right</h4>
+            <p>right-content</p>
+        </div>
+    </div>
+    <div class="footer"><h4>footer</h4></div>
+</body>
+</html>
+
+<!-- 圣杯布局正常情况下没问题，但有一个问题【缺点】：一个最小宽度(min-width)，当页面<最小宽度时布局就会乱掉。 -->
+<!-- 
+    所以要给body设置一个min-width。这个min-width肯定不能是试出来的，怎么计算呢？就是left-width * 2 + right-width， 
+    简单的说就是：“由于设置了相对定位，所以当left原来的位置和right产生重叠时，由于浮动的原因一行放不下，就会换行。所以布局就被打乱了。使用双飞翼布局就可以避免这个问题。
+-->
+
